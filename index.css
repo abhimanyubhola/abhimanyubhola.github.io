@@ -1,0 +1,759 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+:root {
+    --accent-color: #feb90e;
+    /* Changed from pink to Indigo */
+    --accent-color-rgb: 254, 185, 14;
+    --accent-color-hover: rgba(254, 185, 14, 0.8);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    padding: 0px;
+    margin: 0px;
+    max-width: 100vw;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-color: #fcfcfcff;
+}
+
+#loading {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: rgb(159, 227, 192);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#spinner {
+    animation: rotate 0.56s infinite linear;
+    width: 50px;
+    height: 50px;
+    border: 12px solid var(--accent-color);
+    border-bottom: 12px solid #b2aee8;
+    border-radius: 50%;
+    margin: 0;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+header {
+    font-family: 'Fira Code', monospace;
+    font-weight: bold;
+    width: 100%;
+    padding: 4vh 15%;
+    position: fixed;
+    background: #fff6dfff;
+    color: #000;
+    transition: 0.4s ease-in-out;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+header table {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#header.scrolled {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    padding: 3vh 15%;
+}
+
+#header.scrolled #navigation a {
+    color: #fff;
+}
+
+#logo {
+    width: 20%;
+}
+
+#navigation {
+    width: 80%;
+    text-align: right;
+    white-space: nowrap;
+    /* keep links on one line */
+    z-index: 100;
+}
+
+#magnify {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.92);
+    position: fixed;
+    z-index: 4;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#magnify h1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px 40px;
+    color: #fff;
+    transition: 0.4s ease-in-out;
+}
+
+#magnify h1:hover {
+    color: var(--accent-color);
+    cursor: pointer;
+}
+
+#img_here {
+    width: 90%;
+    height: 90%;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    margin: 0px auto;
+}
+
+#logo {
+    font-size: 24px;
+    color: var(--accent-color);
+}
+
+#logo a {
+    color: inherit;
+    text-decoration: none;
+    /* padding: 5px 0px;
+    border-bottom: 2px solid transparent;
+    margin-left: 4vw;
+    transition: 0.4s ease-in-out; */
+}
+
+/* #navigation {
+    text-align:right;
+} */
+#navigation a {
+    color: inherit;
+    text-decoration: none;
+    padding: 5px 0px;
+    border-bottom: 2px solid transparent;
+    margin-left: 4vw;
+    transition: 0.4s ease-in-out;
+}
+
+#navigation a:hover {
+    border-bottom: 2px solid var(--accent-color);
+}
+
+#top_part {
+    width: 100%;
+    padding: 15vh 15%;
+}
+
+#top_part tr td {
+    vertical-align: middle;
+}
+
+#about {
+    width: 60%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+#about h1 {
+    font-size: 45px;
+    word-wrap: normal;
+    font-family: 'Fira Code', monospace;
+}
+
+#about table {
+    width: 40%;
+    margin-top: 4vh;
+}
+
+#about table tr td {
+    width: 20% !important;
+    text-align: left;
+}
+
+.social {
+    color: var(--accent-color);
+    font-size: 23px;
+    padding: 10px 12px;
+    border-radius: 50%;
+    background: transparent;
+    transition: 0.4s ease-in-out;
+    font-weight: bold;
+    margin: 0 5% 0 0;
+}
+
+.social:hover {
+    cursor: pointer;
+    color: #fff;
+    background: var(--accent-color);
+    box-shadow: 0px 10px 30px rgba(var(--accent-color-rgb), 0.8);
+}
+
+.btn_one {
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--accent-color);
+    background: #fff;
+    border: 3px solid var(--accent-color);
+    padding: 8px 40px;
+    width: 50%;
+    /* border-radius: 80px; */
+    font-weight: bold;
+    margin: 2vh 0px;
+    transition: 0.4s ease-in-out;
+}
+
+.btn_one:hover {
+    box-shadow: 0px 10px 30px rgba(var(--accent-color-rgb), 0.8);
+    cursor: pointer;
+    color: #fff;
+    background: var(--accent-color);
+}
+
+#rightImage {
+    width: 40%;
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+}
+
+#rightImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* border: solid 7px var(--accent-color);
+    border-style: groove; */
+}
+
+#rightImage::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(var(--accent-color-rgb), 0.8); */
+}
+
+
+#work {
+    width: 100%;
+    padding: 6vh 15%;
+    font-weight: bold;
+}
+
+#work h1 {
+    padding: 5px 0px;
+    border-bottom: 4px solid var(--accent-color);
+    width: 8%;
+    font-family: 'Fira Code', monospace;
+}
+
+#work_ex {
+    width: 100%;
+    columns: 3;
+    column-gap: 4%;
+    z-index: 1;
+    transition: 0.4s ease-in-out;
+    /* position: center; */
+}
+
+.project-item {
+    width: 100%;
+    position: relative;
+    margin: 4.5% 0px;
+    /* cursor: pointer; */
+    overflow: hidden;
+    /* border-radius: 8px; */
+    /* border: 2px solid #555; */
+}
+
+.project-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    padding: 0 20px;
+    transition: 0.4s ease-in-out;
+    z-index: 1;
+}
+
+.project-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    /* text-transform: uppercase; */
+    letter-spacing: 1px;
+    line-height: 1;
+    font-family: 'Fira Code', monospace;
+}
+
+.project-timeline {
+    transform: translateY(2px);
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1;
+    margin-left: auto;
+}
+
+#work_ex img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: 0.4s ease-in-out;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.85));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px 20px;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+    z-index: 1;
+}
+
+.project-overlay-header {
+    width: 100%;
+    color: var(--accent-color);
+    font-size: 22px;
+    font-weight: bold;
+    transform: translateY(20px);
+    transition: 0.4s ease-in-out;
+    text-align: left;
+    margin-bottom: 15px;
+    font-family: 'Fira Code', monospace;
+}
+
+.project-overlay-text {
+    width: 100%;
+    color: white;
+    font-size: 15px;
+    font-weight: normal;
+    transform: translateY(20px);
+    transition: 0.4s ease-in-out;
+    text-align: left;
+    padding: 0;
+    line-height: 1.75;
+}
+
+.project-item:hover img {
+    scale: 1.1;
+}
+
+.project-item:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-item:hover .project-info {
+    opacity: 0;
+}
+
+.project-item:hover .project-overlay-text {
+    transform: translateY(0);
+}
+
+.project-item:hover .project-overlay-header {
+    transform: translateY(0);
+}
+
+#bio {
+    width: 100%;
+    padding: 5vh 15%;
+    font-weight: normal;
+    line-height: 1.8;
+}
+
+#bio p {
+    text-align: justify;
+}
+
+#bio h1 {
+    padding: 5px 0px;
+    border-bottom: 4px solid var(--accent-color);
+    width: 8%;
+    font-family: 'Fira Code', monospace;
+}
+
+#contact {
+    width: 100%;
+    padding: 6vh 15%;
+}
+
+#contact h1 {
+    font-family: 'Fira Code', monospace;
+    padding: 5px 0px;
+    border-bottom: 4px solid var(--accent-color);
+    width: 8%;
+}
+
+#contact p {
+    text-align: left;
+    margin-top: 4vh;
+    line-height: 1.8;
+}
+
+#contact_socials {
+    margin-top: 4vh;
+}
+
+#footer {
+    width: 100%;
+    padding: 10vh 15%;
+    text-align: center;
+    font-weight: bold;
+}
+
+#footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+::placeholder {
+    color: #000;
+}
+
+button:focus {
+    outline: none;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* === Academic resume section === */
+
+#academics {
+    width: 100%;
+    padding: 5vh 15%;
+    font-weight: bold;
+    color: #000000;
+}
+
+#academics h1 {
+    padding: 5px 0px;
+    border-bottom: 4px solid var(--accent-color);
+    width: 8%;
+    font-family: 'Fira Code', monospace;
+}
+
+.acad-subtitle {
+    font-weight: normal;
+    font-size: 16px;
+    margin: 0 0 40px 0;
+    color: #666;
+}
+
+.acad-grid {
+    display: block;
+}
+
+.acad-column {
+    width: 100%;
+}
+
+/* central vertical line */
+.acad-grid::before {
+    content: none;
+}
+
+.acad-column h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+/* each entry */
+.acad-item {
+    position: relative;
+    display: block;
+    margin-bottom: 35px;
+}
+
+/* circle on the timeline */
+.acad-marker {
+    content: none;
+}
+
+/* content box */
+.acad-content {
+    background: #fff6dfff;
+    padding: 14px 18px;
+    /* border-radius: 6px; */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.09);
+    border-left: 4px solid var(--accent-color);
+}
+
+.acad-period {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #ffffffff;
+    background: #aaaaaaff;
+    padding: 4px 10px;
+    /* border-radius: 30px; */
+    margin-bottom: 8px;
+}
+
+.acad-title {
+    font-size: 16px;
+    margin: 3px 0;
+    color: #222;
+}
+
+.acad-school {
+    font-size: 14px;
+    color: #333;
+}
+
+.acad-location {
+    font-size: 13px;
+    color: #777;
+    font-style: italic;
+    margin-bottom: 6px;
+}
+
+.acad-desc {
+    font-size: 14px;
+    font-weight: normal;
+    color: #444;
+    margin: 6px 0 10px 0;
+    text-align: justify;
+}
+
+/* .acad-desc ul {
+    list-style-type: disc;
+}
+
+.acad-desc ul li {
+    font-size: 14px;
+    font-weight: normal;
+    color: #444;
+    margin: 6px 0 10px 0;
+    text-align: justify;
+} */
+
+.acad-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.acad-tag {
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--accent-color);
+    padding: 4px 10px;
+    /* border-radius: 20px; */
+    white-space: nowrap;
+}
+
+/* right column empty (only academics on left) */
+.acad-column-empty {
+    position: relative;
+}
+
+/* Responsive: stack columns on small screens */
+@media (max-width: 900px) {}
+
+
+@media (max-width: 1000px) {
+
+    #header {
+        padding: 3vh 5%;
+    }
+
+    .acad-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .acad-grid::before {
+        left: 10px;
+        /* move line to left */
+        transform: none;
+    }
+
+    /* .acad-item {
+        padding-left: 30px;
+    } */
+
+    .acad-marker {
+        left: 0;
+    }
+
+    #photos {
+        columns: 1;
+        column-gap: 0%;
+    }
+
+    #photos img {
+        margin: 2% 0px;
+    }
+
+    #photos img:hover {
+        transform: scale(1);
+        /* cursor: pointer; */
+    }
+
+    #top_part {
+        width: 100%;
+        padding: 0;
+        /* Remove default padding to let children handle it */
+    }
+
+    #top_part tbody,
+    #top_part tr {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    #rightImage {
+        display: block;
+        padding: 0;
+        /* Changed to 0 so image fills container, or adjust as needed */
+        width: 100%;
+        scale: 0.9;
+        height: 45vh;
+        margin-top: 30vh;
+        position: relative;
+        overflow: hidden;
+    }
+
+
+    #about {
+        width: 100% !important;
+        height: auto;
+        padding: 20vh 15% !important;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #about table {
+        width: 100%;
+        margin-top: 6vh;
+    }
+
+    #about table tr td {
+        text-align: center;
+    }
+
+    .btn_one {
+        padding: 6px 30px;
+        width: 60%;
+        margin: 4vh auto;
+        box-shadow: 0px 10px 20px rgba(var(--accent-color-rgb), 0.8);
+        background: var(--accent-color);
+        color: #f2f2f2;
+    }
+
+    .btn_one:hover {
+        box-shadow: 0px 10px 40px rgba(var(--accent-color-rgb), 0.8);
+        cursor: pointer;
+    }
+
+    #work h1 {
+        width: 20%;
+    }
+
+    #work_ex {
+        columns: 1;
+    }
+
+    #bio h1 {
+        width: 20%;
+    }
+
+    #contact h1 {
+        width: 20%;
+        font-family: 'Fira Code', monospace;
+    }
+
+    #academics h1 {
+        width: 20%;
+    }
+
+    /* header {
+        width: 100%;
+        background: #fff;
+        padding: 4vh 8%;
+        position: absolute;
+    } */
+
+    #header table tr td {
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 10px 0px;
+    }
+
+    #header.scrolled #navigation {
+        display: none;
+    }
+
+    #header.scrolled {
+        padding: 3vh 5%;
+    }
+}
+
+#about .socials {
+    margin-left: -4%;
+    /* pull the social icons closer to the left edge */
+    padding-left: 0;
+}
