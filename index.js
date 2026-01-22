@@ -34,8 +34,8 @@ setTimeout(function () {
     setTimeout(function () {
         $("#loading").removeClass("animated fadeOut");
         $("#loading").css("display", "none");
-    }, 800);
-}, 1650);
+    }, 500);
+}, 1000);
 
 $(document).ready(function () {
     $("a").on('click', function (event) {
