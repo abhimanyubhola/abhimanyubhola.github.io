@@ -24,7 +24,7 @@ body {
 
 #loading {
     width: 100vw;
-    height: 100vh;
+    height: 105vh;
     position: fixed;
     background: #fff6dfff;
     z-index: 999;
@@ -182,7 +182,7 @@ header table {
 }
 
 #about h1 {
-    font-size: 45px;
+    font-size: 32px;
     word-wrap: normal;
     font-family: 'Fira Code', monospace;
 }
