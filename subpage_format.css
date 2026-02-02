@@ -154,6 +154,10 @@ body {
     .image-grid {
         grid-template-columns: repeat(1, 1fr);
     }
+
+    #content {
+        padding: 15vh 8% 5vh 8%;
+    }
 }
 
 .video-wrapper {
