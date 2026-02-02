@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>YRF - Abhimanyu Bhola</title> <!-- Updated title -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="subpage_format.css">
+</head>
+
+<body>
+    <div id="loading">
+        <div id="spinner"></div>
+    </div>
+    <div id="magnify">
+        <h1 onclick="closemagnify()"><i class="fas fa-times"></i></h1>
+        <div id="img_here"></div>
+    </div>
+
+    <header id="header" class="animated slideInDown" style="animation-delay:1.8s;">
+        <table>
+            <tr>
+                <td id="logo"><a href="index.html">Abhimanyu</a></td>
+                <td id="navigation">
+                    <a href="index.html">home</a>
+                    <a href="#contact">contact</a>
+                </td>
+            </tr>
+        </table>
+    </header>
+
+    <!-- <div table id="top_part">
+        <tr>
+            <td id="about" class="animated slideInLeft" style="animation-delay:2s;">
+                <h1>Welcome to the Inito Page</h1> 
+            </td>
+            <td id="rightImage" class="animated slideInRight" style="animation-delay:2.2s;">
+                <img src="https://images.unsplash.com/photo-1506057527569-6a0285b2fcc1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=60" alt="Right Image">
+            </td>
+        </tr>
+    </div> -->
+
+    <div id="content">
+
+        <h1>Young Research Fellow Program, IIT Madras</h1>
+        <h2>Undergraduate Researcher, Sep 2020 - Jun 2021</h2>
+
+        <p>
+            As part of the inaugural cohort of the <a href="https://yrf.iitm.ac.in">Young Research Fellow Program</a>, I
+            worked with Prof. Satadal Ghosh from the Department of Aerospace Engineering. During the pandemic, I
+            broadened my skillset by working on a hybrid target driven guidance and obstacle avoidance algorithm for
+            UAVs. I utilised the classical approaches of Proportional Navigation and Acceleration Velocity Obstacles for
+            doing so. In parallel, I pursued courses in data science and machine learning, building a sound foundation
+            in optimization and decision-making algorithms. While outside my domain of core automotive engineering,
+            the program provided me with early exposure to research practices such as problem formulation, literature
+            review, and systematic evaluation, skills that later proved valuable in my Master’s thesis.
+        </p>
+        <div class="image-container centered">
+            <img src="Images/YRF-page/YRF_Poster-1.png" alt="YRF Poster">
+            <label>Poster for the research conducted as part of the YRF Program</label>
+        </div>
+        <!-- Add more content as needed -->
+    </div>
+
+    <div id="contact">
+        <h1>contact</h1>
+        <p>
+            You can reach out to me at <b>abhimanyubhola@gmail.com</b>
+        </p>
+        <div id="contact_socials">
+            <a class="social" href="https://www.linkedin.com/in/abhimanyu-bhola-961686176/" target="_blank"
+                rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+            <a class="social" href="https://www.instagram.com/abhimanyu_bhola/" target="_blank"
+                rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a class="social" href="mailto:abhimanyubhola@gmail.com" target="_blank" rel="noopener noreferrer"><i
+                    class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+
+    <div id="footer">
+        made by me, with the help of Gemini. <br> theme inspired from <a href="https://github.com/imfunniee/fimbo"><i
+                class="fab fa-github"></i></a>
+    </div>
+    <script src="index.js" type="text/javascript"></script>
+</body>
+
+</html>
